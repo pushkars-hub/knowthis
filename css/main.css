@@ -1,0 +1,324 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~ GLOBAL STYLES START ~~*/
+:root {                                     /*Root variables*/
+    --txt: aliceblue;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #181818;
+}
+/*SCROLLBAR DESIGN*/
+::-webkit-scrollbar {                       /*Width*/
+    width: 10px;
+}
+::-webkit-scrollbar-track {                 /*Track*/
+background-color: rgba(100, 100, 100, 1);
+}
+::-webkit-scrollbar-thumb {                 /*Handle*/
+background: rgba(245, 245, 245, 0.72);
+border-radius: 5px;
+box-shadow: inset -2px 0 5px rgba(0, 0, 0, 0.25), inset 2px 0 5px rgba(255, 255, 255, 0.5);
+opacity: 0.5;
+transition: 0.5s;
+}
+::-webkit-scrollbar-thumb:hover {           /*Handle on hover*/
+    background: rgba(255, 255, 255, 1);
+    opacity: 1;
+}
+/*~~ GLOBAL STYLES END ~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~ HEADER SECTION START ~~*/
+.headerLogo {
+    position: relative;
+    max-width: 40px;
+    max-height: 40px;
+    padding-left: 14vw;
+    padding-top: 3vh;
+}
+.headerLogo img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+/*~~ HEADER SECTION END ~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~ HERO SECTION START ~~*/
+.heroText {
+    color: var(--txt);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2rem;
+    padding-left: 14vw;
+    padding-top: 20vh;
+    z-index: 1;
+}
+.heroScrollArrow {
+    margin-top: 35vh;
+    max-width: 100vw;
+    text-align: center;
+    fill: var(--txt);
+}
+/*~~ HERO SECTION END ~~*/
+/*~~~~~~~~~~~~~~~~~~~~~*/
+
+
+/*~~~~~~~~~~~~~~~~~~~*/
+/*~~ WHOAMI START ~~*/
+.whoami {
+    display: flex;
+    position: relative;
+    margin-top: 50px;
+}
+.whoami .whoamiText {
+    padding-left: 41px;
+    padding-right: 27px;
+    min-height: 75vh;
+    width: 100%;
+}
+.whoami .whoamiText .whoamiTitle {
+    display: flex;
+}
+.whoami .whoamiText .whoamiTitle h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.27vw;
+    color: var(--txt);
+}
+.whoami .whoamiText .whoamiTitle h2:hover {
+    cursor: pointer;
+}
+.whoami .whoamiText .whoamiTitle h4 {
+    padding-top: 5px;
+    padding-left: 27px;
+    color: var(--txt);
+    animation: whoami-Breathe 6s ease-in-out infinite;
+}
+@keyframes whoami-Breathe {
+    0%, 100% {opacity: 0.2;}
+    50% {opacity: 1;}
+}
+.whoami .whoamiText .whoamiContent {
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--txt);
+}
+.whoami .whoamiText .blinker {
+    opacity: 1;
+    margin-bottom: -2px;
+    height: 15px;
+    margin-left: 0px;
+    border-left: 7px solid var(--txt);
+    animation: blinker 0.9s steps(2, start) infinite;
+}
+@keyframes blinker {
+    to { 
+        visibility: hidden; 
+    }
+}
+
+.whoami .whoamiImage {
+    max-height: 50vh;
+    width: 100%;
+}
+/*~~ WHOAMI END ~~*/
+/*~~~~~~~~~~~~~~~*/
+
+
+/*~~~~~~~~~~~~~~~~~~~~~*/
+/*~~ ARTICLES START ~~*/
+.pageContainer .pageContent .articles {
+    max-width: 95vw;
+    margin: 0 auto;
+    font-family: 'Courier New', Courier, monospace;
+}
+.pageContainer .pageContent .articles .row {
+    display: flex;
+    height: 30vh;
+    justify-content: space-evenly;
+}
+.pageContainer .pageContent .articles .row .article {
+    position: relative;
+    width: 25%;
+    margin: 10px;
+    transform-style: preserve-3d;
+}
+.pageContainer .pageContent .articles .row .article:hover, .articleText {
+    box-shadow: 0 50px 80px rgba(0, 0, 0, 0.4);
+}
+.pageContainer .pageContent .articles .row .article a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--txt);
+    transition: 0.5s;
+    transform-style: preserve-3d;
+}
+.pageContainer .pageContent .articles .row .article a .articleText {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    padding: 10px;
+    background: #202020;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    transform: translateZ(0) scaleY(0);
+    transform-origin: top;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+}
+.pageContainer .pageContent .articles .row .article:hover a .articleText {
+    transform: translateZ(100px) scaleY(1);
+}
+.pageContainer .pageContent .articles .row .article a .articleText h2 {
+    transform: translateZ(0) scaleY(1);
+    margin-bottom: 15px;
+}
+.pageContainer .pageContent .articles .row .article a .articleText p {
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    line-height: 1.5;
+}
+.pageContainer .pageContent .articles .row .article a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/*~~ ARTICLES END ~~*/
+/*~~~~~~~~~~~~~~~~~*/
+
+
+/*~~~~~~~~~~~~~~~~~~~*/
+/*~~ FOOTER START ~~*/
+.Pre-Footer {                               /*Pre-Footer Section*/
+    width: 100%;
+    min-height: 40vh;
+    padding-top: 50px;
+    text-align: center;
+}
+.Pre-Footer h1, .Pre-Footer h2 {
+    padding-bottom: 30px;
+    color: var(--txt);
+        font-family: "lato", sans-serif;
+        letter-spacing: 5px;
+        font-size: 2.1vw;
+        font-weight: 1;
+        background: linear-gradient(var(--txt), #38495a);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+}
+footer {                                    /*Footer Section*/
+    position: relative;
+    width: 100%;
+    background: #3586ff;
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    user-select: none;
+}
+footer .social-icons, footer .menu {        /*Social Media Icons and Site Navigation Menu*/
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+footer .social-icons li, footer .menu li {
+    list-style: none;
+}
+footer .social-icons li a {
+    font-size: 2em;
+    color: whitesmoke;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+}
+footer .social-icons li a:hover {
+    transform: translateY(-10px);
+}
+footer .menu li a {
+    font-size: 1.2em;
+    color: whitesmoke;
+    text-decoration: none;
+    margin: 0 10px;
+    display: inline-block;
+    opacity: 0.5;
+    transition: 0.5s;
+}
+footer .menu li a:hover {
+    opacity: 1;
+}
+footer p {                                  /*Copyright Statement*/
+    color: whitesmoke;
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.9rem;
+    user-select: none;
+}
+footer .wave {                              /*Footer Wave*/
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(/img/wave.png);
+    background-size: 1500px 100px;
+}
+footer .wave#wave1 {
+    z-index: 10;
+    opacity: 1;
+    bottom: 0;
+    animation: wave1 4s linear infinite;
+}
+footer .wave#wave2 {
+    z-index: 9;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: wave2 4s linear infinite;
+}
+footer .wave#wave3 {
+    z-index: 8;
+    opacity: 0.25;
+    bottom: 15px;
+    animation: wave1 3s linear infinite;
+}
+footer .wave#wave4 {
+    z-index: 7;
+    opacity: 0.125;
+    bottom: 20px;
+    animation: wave2 3s linear infinite;
+}
+@keyframes wave1 {
+    0% {background-position-x: 1500px;}
+    100% {background-position-x: 0;}
+}
+@keyframes wave2 {
+    0% {background-position-x: 0;}
+    100% {background-position-x: 1500px;}
+}
+/*~~ FOOTER END ~~*/
+/*~~~~~~~~~~~~~~~*/
